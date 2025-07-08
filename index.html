@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy birthday babyy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #ffe4ec;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 36px auto;
+            background: #fff;
+            padding: 24px 8px;
+            border-radius: 16px;
+            box-shadow: 0 6px 32px #b4b4b4;
+            max-width: 98vw;
+            width: 360px;
+        }
+        h1 {
+            color: #e75480;
+        }
+        .nav-buttons {
+            margin-top: 32px;
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .nav-buttons.show {
+            display: flex;
+        }
+        .nav-buttons a, .nav-buttons button {
+            padding: 10px 0;
+            background: #e75480;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+        .nav-buttons a:hover, .nav-buttons button:hover {
+            background: #d13d6c;
+        }
+        .subtitle {
+            color: #e75480;
+            font-size: 1.15em;
+            margin-bottom: 26px;
+        }
+        .passcode-section {
+            margin: 24px 0;
+        }
+        .passcode-section input[type="password"] {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #e75480;
+            font-size: 1em;
+            width: 65%;
+            margin-bottom: 10px;
+        }
+        .passcode-section button {
+            padding: 8px 18px;
+            background: #e75480;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 30%;
+        }
+        .passcode-section button:hover {
+            background: #d13d6c;
+        }
+        .error-message {
+            color: #d13d6c;
+            margin-top: 10px;
+            font-size: 0.98em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 95vw;
+                margin: 14vw auto;
+                padding: 18px 2vw;
+                box-sizing: border-box;
+            }
+            .nav-buttons a, .nav-buttons button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Happy Birthday! 💖</h1>
+        <div class="subtitle">Welcome to your special surprise, my love!</div>
+        <p style="font-size: 1em;">
+            Today is all about celebrating you.<br>
+            Tap below to read your birthday letter, watch a video, or see our favorite memories together.
+        </p>
+        <div class="passcode-section" id="passcode-section">
+            <input type="password" id="passcode" placeholder="Enter passcode"><br>
+            <button onclick="checkPasscode()">Unlock</button>
+            <div class="error-message" id="error-message"></div>
+        </div>
+        <div class="nav-buttons" id="nav-buttons">
+            <a href="birthday_letter.html">Read Letter</a>
+            <a href="birthday_video.html">Watch Video</a>
+            <a href="birthday_pictures.html">Our Pictures</a>
+        </div>
+    </div>
+    <script>
+        const correctPasscode = '07262006';
+        window.onload = function() {
+            if (localStorage.getItem('birthday_unlocked') === 'true') {
+                document.getElementById('nav-buttons').classList.add('show');
+                document.getElementById('passcode-section').style.display = 'none';
+            }
+        };
+        function checkPasscode() {
+            const passcode = document.getElementById('passcode').value;
+            const navButtons = document.getElementById('nav-buttons');
+            const errorMsg = document.getElementById('error-message');
+            if (passcode === correctPasscode) {
+                navButtons.classList.add('show');
+                errorMsg.textContent = '';
+                document.getElementById('passcode-section').style.display = 'none';
+                localStorage.setItem('birthday_unlocked', 'true');
+            } else {
+                errorMsg.textContent = 'Incorrect passcode. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
