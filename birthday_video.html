@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy birthday babyy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #ffe4ec;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            margin: 26px auto;
+            background: #fff;
+            padding: 18px 3vw;
+            border-radius: 16px;
+            box-shadow: 0 6px 32px #b4b4b4;
+            max-width: 98vw;
+            width: 360px;
+        }
+        h1 {
+            color: #e75480;
+            margin-bottom: 14px;
+            font-size: 1.7em;
+        }
+        .nav-buttons {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .nav-buttons a {
+            padding: 8px 0;
+            background: #e75480;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+        .nav-buttons a:hover {
+            background: #d13d6c;
+        }
+        .video-wrap {
+            margin: 0 auto;
+            margin-top: 18px;
+            margin-bottom: 12px;
+            max-width: 100%;
+        }
+        video, iframe {
+            width: 100%;
+            max-width: 100%;
+            height: 190px;
+            border-radius: 9px;
+            background: #000;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 97vw;
+                margin: 7vw auto;
+                padding: 10px 2vw;
+            }
+            video, iframe {
+                height: 34vw;
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy 19th birthday babyy</h1>
+        <p>
+            Here's a video just for you!<br>
+            Hope this brings a smile to your face, babyy girl.
+        </p>
+        <div class="video-wrap">
+            <video width="100%" controls poster="video_thumbnail.jpg">
+                <source src="hehehee.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="nav-buttons">
+            <a href="index.html">Back to Home</a>
+
+        </div>
+    </div>
+</body>
+</html>

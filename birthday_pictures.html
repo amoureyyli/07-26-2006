@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday babyy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #ffe4ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      margin: 24px auto;
+      background: #fff;
+      padding: 12px 2vw 24px 2vw;
+      border-radius: 16px;
+      box-shadow: 0 6px 32px #b4b4b4;
+      max-width: 98vw;
+      width: 380px;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+    h1 {
+      color: #e75480;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+    .gallery img {
+      width: 47vw;
+      max-width: 140px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #e75480;
+      box-shadow: 0 2px 8px #f9b5cd50;
+      background: #f7f7f7;
+      animation: floatPic 2.8s ease-in-out infinite;
+      transition: transform 0.3s;
+    }
+    .gallery img:nth-child(2n) {
+      animation-delay: 0.5s;
+    }
+    .gallery img:nth-child(3n) {
+      animation-delay: 1s;
+    }
+    .gallery img:nth-child(4n) {
+      animation-delay: 1.5s;
+    }
+    .gallery img:nth-child(5n) {
+      animation-delay: 2s;
+    }
+    @keyframes floatPic {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-13px) scale(1.03);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .nav-buttons {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav-buttons a {
+      padding: 8px 0;
+      background: #e75480;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .nav-buttons a:hover {
+      background: #d13d6c;
+    }
+    .caption {
+      margin-top: 9px;
+      font-size: 1em;
+      color: #e75480;
+      animation: pulseCaption 2s infinite;
+    }
+    @keyframes pulseCaption {
+      0% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    audio {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .container {
+        width: 97vw;
+        margin: 8vw auto;
+        padding: 8px 2vw 18px 2vw;
+      }
+      .gallery img {
+        width: 44vw;
+        max-width: 110px;
+        height: 84px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Pictures</h1>
+    <p style="font-size: 1em;">
+      Some of our favorite captured memories.<br />
+  
+    </p>
+
+    <!-- Autoplaying hidden music -->
+    <audio id="bgm" src="The Ridleys - Be with you (Lyrics).mp3" autoplay loop muted></audio>
+
+    <div class="gallery">
+      <img src="download (1).jpg" alt="Memory 1" />
+      <img src="download (12).jpg" alt="Memory 2" />
+      <img src="download (26).jpg" alt="Memory 3" />
+      <img src="download (30).jpg" alt="Memory 4" />
+      <img src="download (35).jpg" alt="Memory 5" />
+      <img src="download (39).jpg" alt="Memory 6" />
+      <img src="download (40).jpg" alt="Memory 7" />
+      <img src="download (42).jpg" alt="Memory 8" />
+      <img src="download (48).jpg" alt="Memory 9" />
+      <img src="download (6).jpg" alt="Memory 10" />
+    </div>
+
+    <div class="caption">Looking forward to making more memories with you!</div>
+
+    <div class="nav-buttons">
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      const audio = document.getElementById("bgm");
+      audio.muted = false;
+      audio.play().catch(() => {
+        document.body.addEventListener(
+          "click",
+          () => {
+            audio.play();
+          },
+          { once: true }
+        );
+      });
+    });
+  </script>
+</body>
+</html>
